@@ -34,7 +34,7 @@ The text inside the tags is just alternative content in case one of the two foll
 
 ##### index.js
 
-<pre><code>const canvas = document.getElemetById("canvas")
+<pre><code>const canvas = document.getElementById("canvas")
 const context = canvas.getContext("2d")
 </code></pre>
 
