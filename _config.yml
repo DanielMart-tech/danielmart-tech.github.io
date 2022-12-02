@@ -57,3 +57,4 @@ plugins:
 
 future: true
 paginate: 10
+paginate_path: "/blog/page:num/"
