@@ -33,6 +33,7 @@ github_username:  DanielMart-tech
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -55,3 +56,4 @@ plugins:
 #   - vendor/ruby/
 
 future: true
+paginate: 10
