@@ -36,3 +36,5 @@ context.fill()
 </code></pre>
 
 ![rects](/../../../assets/images/rects.png)
+
+> The *roundRect()* method is still not supported in Firefox.
