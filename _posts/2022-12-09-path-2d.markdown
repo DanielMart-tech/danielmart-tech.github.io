@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Path2D in Canvas"
+date:   2022-12-09 15:12:06 -0400
+categories: canvas
+---
+We have discussed previuosly how to create [paths and subpaths](https://danielmart-tech.github.io/canvas/2022/10/14/paths-in-canvas.html) to create different shapes and figures. But the Canvas API offers us an interface as well for declaring a path that will be used a posteriori, that is to say, the **Path2D** interface. It then can be used in a [*CanvasRenderingContext2D*](https://danielmart-tech.github.io/canvas/2022/09/23/brief-intro-canvas-api.html) object.
+
+To create an object we need to call the *Path2D* constructor. Optionally we can add another path as an argument:
+
+<pre><code>new Path2D()
+new Path2D(path) // optional argument
+</code></pre>
+
+Let's see how we can create basic shapes with this interface:
+
+<pre><code>const canvas = document.getElementById("canvas")
+const context = canvas.getContext("2d")
+
+/* 
+Beginning a new path
+and adding a rectangle
+*/
+const path1 = new Path2D()
+path1.rect(5, 5, 60, 60)
+
+/*
+Beginning a second path
+and adding an arc.
+It also includes a copy of the path1 object.
+*/
+const path2 = new Path2D(path1)
+path2.arc(120, 50, 50, 0, 2 * Math.PI);
+
+/*
+Rendering the path2 object which includes an arc
+and a rectangle (as a result of the copy of path1).
+*/
+context.fill(path2)
+</code></pre>
+
+![path2d](/../../../assets/images/path2d.png)
+
+The path methods we have written about in our previous posts are also present in the *Path2D* interface:
+
+1. [Path2D.addPath()](https://danielmart-tech.github.io/canvas/2022/10/14/paths-in-canvas.html)
+2. [Path2D.closePath()](https://danielmart-tech.github.io/canvas/2022/10/14/paths-in-canvas.html)
+3. [Path2D.moveTo()](https://danielmart-tech.github.io/canvas/2022/10/14/paths-in-canvas.html)
+4. [Path2D.lineTo()](https://danielmart-tech.github.io/canvas/2022/10/14/paths-in-canvas.html)
+5. [Path2D.bezierCurveTo()](https://danielmart-tech.github.io/canvas/2022/11/18/bezier-curves-canvas.html)
+6. [Path2D.quadraticCurveTo()](https://danielmart-tech.github.io/canvas/2022/11/18/bezier-curves-canvas.html)
+7. [Path2D.arc](https://danielmart-tech.github.io/canvas/2022/11/25/arcs-canvas.html)
+8. [Path2D.arcTo()](https://danielmart-tech.github.io/canvas/2022/11/25/arcs-canvas.html)
+9. [Path2D.ellipse()](https://danielmart-tech.github.io/canvas/2022/11/25/arcs-canvas.html)
+10. [Path2D.rect()](https://danielmart-tech.github.io/canvas/2022/12/02/path-for-rectangles-canvas.html)
+11. [Path2D.roundRect()](https://danielmart-tech.github.io/canvas/2022/12/02/path-for-rectangles-canvas.html)
+
+Take a look if you haven't read them yet :)
